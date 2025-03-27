@@ -1,9 +1,12 @@
 name: Build/release WhatsMenu Desktop
 
 on:
-  push:
-    tags:
-      - v*.*.*
+  workflow_dispatch:
+    inputs:
+      title:
+        description: "Title for the deployment"
+        required: true
+        default: "Release Desktop"
 
 jobs:
   make:
